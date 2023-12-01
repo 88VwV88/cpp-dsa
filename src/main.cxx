@@ -1,7 +1,9 @@
 #include<iostream>
+#include<complex>
+#include<cassert>
 
-int main(int argc, char** argv) {
-    using std::cout, std::endl;
-    cout << "Hello, " << argv[argc!=1] <<  "! " << endl;
+int main() {
+    const std::complex a{ 1.0, 2.0 }, b{ a*a };
+    assert(b.imag() == (2.0*a.imag()*a.real()));
 }
 

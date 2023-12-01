@@ -7,3 +7,5 @@ test: app
 	@echo "Compilation Complete!"
 	@echo "---------------------"
 	@./app VwV
+	@echo "---------------------"
+	@echo "Done!"
