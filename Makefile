@@ -1,5 +1,5 @@
-CC := gcc.exe
-CXX := g++.exe
+CC := gcc
+CXX := g++
 
 app: src/*
 	@$(CXX) -O2 -g -Wall src/*.cxx -o ./app
