@@ -6,15 +6,17 @@ int main()
     try 
     {
         list::List<int> stack{};
-        for (int i=1; i<=1000; ++i)
+        int N{ 15 };
+        for (int i=1; i<=N; ++i)
             stack.push(i);
+        for (int i=0; i<=N; ++i)
+            stack.append(i);
 
-        auto N = stack.size();
-        for (size_t i{}; i<N; ++i)
+        for (int i{}; i<N*2; ++i)
             std::cout << stack.pop() << ' ';
         std::cout << std::endl;
 
-    } 
+    }
     catch (std::exception& e) 
     {
         std::cerr << "List Error: " << e.what() << " occured!\n";

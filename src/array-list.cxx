@@ -15,6 +15,21 @@ namespace list
         {
             delete ptr;
         }
+        constexpr void append(T elem)
+        {   if (_size == 0)
+            {
+                *ptr = elem;
+                _size++; return;
+            }
+            if (bits == _size)
+                bits *= 2;
+            T* temp = new T[bits];
+            memcpy(temp+1, ptr, sizeof(T) * _size);
+            temp[0] = elem;
+            memcpy(ptr, temp, sizeof(T)*(_size+1));
+            
+            _size++;
+        }
         constexpr void push(T elem)
         {
             if (_size == 0)

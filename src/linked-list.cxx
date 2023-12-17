@@ -25,7 +25,7 @@ namespace llst
         constexpr List(List& list) = delete;
         constexpr List(List&& list) noexcept: head(list.head), _size(list._size) {}
         constexpr size_t size() { return _size; };
-        constexpr void add(T elem, size_t index)
+        constexpr void push(T elem, size_t index)
         {
             if (index > _size) {
                 std::string error{};
@@ -42,7 +42,7 @@ namespace llst
             }
             this->_size++;
         }
-        constexpr void add(T elem) { add(elem, (_size)?_size: 0); }
+        constexpr void push(T elem) { push(elem, (_size)?_size: 0); }
         constexpr T get(size_t index) 
         {
             if (!head)
